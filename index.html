@@ -175,26 +175,40 @@
 </section>
 
 
-        <section class="cta">
-            <span class="eyebrow">HAVE A PROJECT IN MIND?</span>
-            <h2>Let's create something <span class="gold">extraordinary.</span></h2>
-            <a href="#contact" class="btn btn-gold">Start a Conversation ↗</a>
-        </section>
+      <form id="contactForm"
+      class="contact-form"
+     action="https://formsubmit.app/f/2p2gfcrvc7"
+      method="POST">
 
-        <section class="contact section" id="contact">
-            <div class="section-heading">
-                <span class="eyebrow">GET IN TOUCH</span>
-                <h2>Let's <span class="gold">Talk.</span></h2>
-                <p>Have an idea? We'd love to hear about it.</p>
-            </div>
+    <input type="hidden" name="_subject"
+           value="New PixelNest Studio Enquiry">
 
-            <form id="contactForm" class="contact-form">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Your Email" required>
-                <textarea id="message" rows="5" placeholder="Tell us about your project..." required></textarea>
-                <button type="submit" class="btn btn-gold">Send Enquiry ↗</button>
-            </form>
-        </section>
+    <input type="hidden" name="_captcha" value="false">
+
+    <div class="form-group">
+        <label for="name">YOUR NAME</label>
+        <input type="text" id="name" name="name"
+               placeholder="Your Name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">YOUR EMAIL</label>
+        <input type="email" id="email" name="email"
+               placeholder="Your Email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="message">PROJECT DETAILS</label>
+        <textarea id="message" name="message" rows="5"
+                  placeholder="Tell us about your project..."
+                  required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-gold">
+        Send Enquiry ↗
+    </button>
+
+</form>
     </main>
 
     <footer class="footer">

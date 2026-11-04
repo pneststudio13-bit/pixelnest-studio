@@ -22,18 +22,7 @@ document.querySelectorAll(".nav a").forEach(link => {
 document.getElementById("year").textContent =
     new Date().getFullYear();
 
-// Contact form demonstration
-document.getElementById("contactForm").addEventListener("submit", (event) => {
-    event.preventDefault();
 
-    const name = document.getElementById("name").value;
-
-    alert(
-        `Thank you, ${name}! Your form is working. We will configure actual email delivery next.`
-    );
-
-    event.target.reset();
-});
 // PixelNest Scroll Reveal Animation
 
 const revealElements = document.querySelectorAll(
