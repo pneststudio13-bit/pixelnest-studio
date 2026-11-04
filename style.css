@@ -1,0 +1,853 @@
+body {
+    background-color: #090909;
+    color: white;
+}
+:root {
+    --black: #090909;
+    --surface: #121212;
+    --gold: #D4AF37;
+    --gold-light: #F0D58A;
+    --white: #F5F5F5;
+    --muted: #A5A5A5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.gold {
+    color: var(--gold);
+}
+
+.header {
+    height: 85px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(9, 9, 9, 0.95);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    display: grid;
+    place-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+}
+
+.logo small {
+    display: block;
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: 5px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav a {
+    font-size: 13px;
+    color: #ccc;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: var(--gold);
+}
+
+.nav .nav-button {
+    border: 1px solid var(--gold);
+    padding: 10px 22px;
+    color: var(--gold);
+}
+
+.menu-toggle {
+    display: none;
+    color: var(--gold);
+    background: none;
+    border: none;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+.hero {
+    min-height: 650px;
+    padding: 100px 10%;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 50px;
+    background:
+        radial-gradient(ellipse at 80% 50%, rgba(212,175,55,0.10), transparent 45%),
+        var(--black);
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-weight: 600;
+}
+
+.hero h1,
+.section-heading h2,
+.intro h2,
+.cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 5.2vw, 72px);
+    margin: 25px 0;
+    max-width: 650px;
+}
+
+.hero-content > p {
+    color: var(--muted);
+    max-width: 490px;
+    font-size: 15px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.btn {
+    padding: 13px 24px;
+    border: 1px solid var(--gold);
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: inherit;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: #080808;
+}
+
+.btn-gold:hover {
+    background: var(--gold-light);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    color: var(--gold);
+}
+
+.btn-outline:hover {
+    background: var(--gold);
+    color: #080808;
+}
+
+.tagline {
+    margin-top: 55px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #888;
+}
+
+.tagline span {
+    color: var(--gold);
+    margin: 0 8px;
+}
+
+.hero-visual {
+    height: 390px;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.hero-monogram {
+    width: 200px;
+    height: 200px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    display: grid;
+    place-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 90px;
+    box-shadow: 0 0 70px rgba(212,175,55,0.13);
+}
+
+.hero-monogram span {
+    color: var(--white);
+}
+
+.orbit {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 50%;
+}
+
+.orbit-two {
+    width: 350px;
+    height: 350px;
+    border-style: dashed;
+}
+
+.visual-label {
+    position: absolute;
+    bottom: 5px;
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: 4px;
+}
+
+.intro {
+    padding: 100px 20%;
+    text-align: center;
+    background: var(--surface);
+}
+
+.intro h2 {
+    font-size: clamp(35px, 4vw, 50px);
+    margin: 20px 0;
+}
+
+.intro p {
+    max-width: 680px;
+    margin: auto;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.section {
+    padding: 100px 10%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-heading h2 {
+    font-size: 48px;
+    margin: 15px 0;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    background: var(--surface);
+    border: 1px solid #292929;
+    padding: 30px 22px;
+    min-height: 260px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+}
+
+.service-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #666;
+    font-size: 11px;
+}
+
+.service-icon {
+    color: var(--gold);
+    font-size: 36px;
+    margin: 25px 0;
+}
+
+.service-card h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.portfolio {
+    background: var(--surface);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.portfolio-card {
+    min-height: 280px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.portfolio-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+
+.portfolio-card span {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.portfolio-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.portfolio-one {
+    background: linear-gradient(145deg, #302313, #111);
+}
+
+.portfolio-two {
+    background: linear-gradient(145deg, #28302a, #111);
+}
+
+.portfolio-three {
+    background: linear-gradient(145deg, #242735, #111);
+}
+
+.portfolio-note {
+    text-align: center;
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 20px;
+}
+
+.cta {
+    text-align: center;
+    padding: 110px 10%;
+    background: radial-gradient(ellipse, #28200d, #090909 70%);
+}
+
+.cta h2 {
+    font-size: clamp(35px, 5vw, 55px);
+    max-width: 750px;
+    margin: 20px auto 35px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    display: grid;
+    gap: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid #333;
+    color: var(--white);
+    padding: 16px;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--gold);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    justify-self: start;
+}
+
+.footer {
+    text-align: center;
+    padding: 40px 15px;
+    border-top: 1px solid #292929;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+}
+
+.footer p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.footer .copyright {
+    font-size: 10px;
+    margin-top: 25px;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-content > p {
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .intro {
+        padding: 80px 10%;
+    }
+}
+
+@media (max-width: 650px) {
+    .header {
+        padding: 0 5%;
+        height: 72px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        padding: 25px;
+        background: #111;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+        border-bottom: 1px solid var(--gold);
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .hero {
+        padding: 80px 7%;
+    }
+
+    .hero-visual {
+        height: 320px;
+    }
+
+    .hero-monogram {
+        width: 150px;
+        height: 150px;
+        font-size: 65px;
+    }
+
+    .orbit {
+        width: 230px;
+        height: 230px;
+    }
+
+    .orbit-two {
+        width: 290px;
+        height: 290px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 75px 7%;
+    }
+
+    .section-heading h2 {
+        font-size: 38px;
+    }
+}
+
+/* PixelNest Premium Logo */
+
+.logo {
+    gap: 13px;
+}
+
+.logo-icon {
+    width: 52px;
+    height: 52px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+}
+
+.logo-p {
+    color: #D4AF37;
+    transform: translateX(-5px);
+}
+
+.logo-n {
+    color: #F5F5F5;
+    transform: translateX(-12px) translateY(5px);
+}
+
+.logo-orbit {
+    position: absolute;
+    width: 57px;
+    height: 23px;
+    border: 1.5px solid #D4AF37;
+    border-radius: 50%;
+    transform: rotate(-30deg);
+}
+
+.logo-name {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.logo-name small {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 5px;
+    color: #D4AF37;
+}
+.hero-monogram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    font-size: 85px;
+}
+
+.hero-monogram .letter-p {
+    color: #D4AF37;
+    z-index: 2;
+}
+
+.hero-monogram .letter-n {
+    color: #F5F5F5;
+    margin-left: -12px;
+    transform: translateY(12px);
+    z-index: 1;
+}
+.portfolio-image {
+    padding: 0;
+    min-height: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    inset: auto 0 0;
+    padding: 35px 20px 20px;
+    background: linear-gradient(transparent, #090909);
+}
+
+.portfolio-overlay span {
+    color: #D4AF37;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.portfolio-overlay h3 {
+    color: white;
+    margin-top: 8px;
+}
+/* Portfolio Hover Effects */
+
+.portfolio-card {
+    overflow: hidden;
+    border-radius: 12px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
+}
+
+.portfolio-card .portfolio-image {
+    transition: transform 0.5s ease;
+}
+
+.portfolio-card:hover .portfolio-image {
+    transform: scale(1.06);
+}
+/* =================================
+   PIXELNEST - RESPONSIVE DESIGN
+================================= */
+
+/* Tablet screens */
+@media (max-width: 900px) {
+
+    .header {
+        padding: 0 5%;
+    }
+
+    .hero {
+        gap: 25px;
+        padding: 80px 7%;
+    }
+
+    .intro {
+        padding: 75px 8%;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section {
+        padding: 80px 7%;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 650px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .logo-name {
+        font-size: 18px;
+    }
+
+    .logo-name small {
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 65px 6%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-visual {
+        height: 280px;
+    }
+
+    .hero-monogram {
+        width: 130px;
+        height: 130px;
+        font-size: 60px;
+    }
+
+    .orbit {
+        width: 190px;
+        height: 190px;
+    }
+
+    .orbit-two {
+        width: 240px;
+        height: 240px;
+    }
+
+    .intro {
+        padding: 65px 7%;
+    }
+
+    .section {
+        padding: 65px 6%;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .service-grid,
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-card .portfolio-image {
+        height: 250px;
+        min-height: 250px;
+        object-fit: cover;
+    }
+
+    .cta {
+        padding: 75px 7%;
+    }
+
+    .cta h2 {
+        font-size: 35px;
+    }
+
+    .contact-form button {
+        width: 100%;
+    }
+
+    .footer {
+        padding: 35px 10px;
+    }
+}
+/* Floating WhatsApp Button */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 999;
+    background: #25D366;
+    color: #fff;
+    padding: 13px 22px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-5px);
+    background: #1ebe5d;
+}
+
+@media (max-width: 650px) {
+    .whatsapp-float {
+        bottom: 18px;
+        right: 15px;
+        padding: 12px 18px;
+    }
+}
+/* =================================
+   PIXELNEST - PREMIUM ANIMATIONS
+================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth stagger effect */
+.service-card,
+.portfolio-card {
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        border-color 0.3s ease,
+        box-shadow 0.4s ease;
+}
+
+.service-card.reveal:nth-child(2),
+.portfolio-card.reveal:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.service-card.reveal:nth-child(3),
+.portfolio-card.reveal:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.service-card.reveal:nth-child(4) {
+    transition-delay: 0.45s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal.active {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
