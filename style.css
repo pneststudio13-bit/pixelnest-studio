@@ -868,3 +868,203 @@ a {
     width: 100%;
     box-sizing: border-box;
 }
+/* Hero entrance animation */
+.hero-content {
+    animation: heroEnter 1.2s ease-out both;
+}
+
+.hero-visual {
+    animation: heroEnter 1.4s ease-out both;
+}
+
+@keyframes heroEnter {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Premium PN logo animation */
+.logo-icon {
+    animation: logoGlow 3s ease-in-out infinite;
+    transition: filter 0.4s ease;
+}
+
+@keyframes logoGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.2));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.8));
+    }
+}
+
+/* Gentle orbit movement */
+.logo-orbit {
+    transform-origin: center;
+    animation: orbitRotate 8s linear infinite;
+}
+
+@keyframes orbitRotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* PRICING SECTION */
+.pricing {
+    padding: 100px 8%;
+    background: #0b0b0b;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.pricing-card {
+    position: relative;
+    padding: 40px 25px;
+    background: #111;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    border-color: #D4AF37;
+    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15);
+}
+
+.pricing-card h3 {
+    color: #fff;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.pricing-card p {
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.pricing-card h2 {
+    color: #D4AF37;
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.pricing-card li {
+    color: #ddd;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.pricing-card .btn {
+    display: inline-block;
+}
+
+.pricing-card.featured {
+    border: 1px solid #D4AF37;
+    transform: scale(1.04);
+}
+
+.popular {
+    display: inline-block;
+    background: #D4AF37;
+    color: #000;
+    padding: 6px 14px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+/* Responsive pricing */
+@media (max-width: 900px) {
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-card.featured {
+        transform: none;
+    }
+}
+
+/* FAQ SECTION */
+.faq {
+    padding: 100px 8%;
+    background: #080808;
+}
+
+.faq-container {
+    max-width: 850px;
+    margin: 50px auto 0;
+}
+
+.faq-item {
+    background: #111;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 22px 25px;
+    transition: 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: #D4AF37;
+}
+
+.faq-item summary {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 30px;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    color: #D4AF37;
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+    top: -5px;
+}
+
+.faq-item[open] summary::after {
+    content: "−";
+}
+
+.faq-item p {
+    color: #aaa;
+    line-height: 1.8;
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+}
